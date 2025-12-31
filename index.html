@@ -4,30 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>อสังหาริมทรัพย์คุณภาพ</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
 
-  <h1>🌿 อสังหาริมทรัพย์คุณภาพ</h1>
-  <p class="subtitle">ที่ดิน บ้านสวน สำหรับอยู่อาศัย ลงทุน และรีสอร์ท</p>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-2">🌿 อสังหาริมทรัพย์คุณภาพ</h1>
+    <p class="text-center text-gray-600 mb-8 text-lg">ที่ดิน บ้านสวน สำหรับอยู่อาศัย ลงทุน และรีสอร์ท</p>
 
-  <div class="filter">
-    <select id="province">
-      <option value="">ทุกจังหวัด</option>
-    </select>
-    <select id="tagFilter">
-      <option value="">ทุกประเภท</option>
-      <option value="บ้านสวน">บ้านสวน</option>
-      <option value="วิว">วิว</option>
-      <option value="นักลงทุน">นักลงทุน</option>
-      <option value="รีสอร์ท">รีสอร์ท</option>
-    </select>
-    <input type="number" id="minPrice" placeholder="ราคาต่ำสุด">
-    <input type="number" id="maxPrice" placeholder="ราคาสูงสุด">
-    <button onclick="filterData()">ค้นหา</button>
+    <div class="flex flex-wrap gap-3 justify-center mb-8 bg-white p-6 rounded-2xl shadow-md">
+      <select id="province" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+        <option value="">ทุกจังหวัด</option>
+      </select>
+      <select id="tagFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+        <option value="">ทุกประเภท</option>
+        <option value="บ้านสวน">บ้านสวน</option>
+        <option value="วิว">วิว</option>
+        <option value="นักลงทุน">นักลงทุน</option>
+        <option value="รีสอร์ท">รีสอร์ท</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="ราคาต่ำสุด" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+      <input type="number" id="maxPrice" placeholder="ราคาสูงสุด" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+      <button onclick="filterData()" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold shadow-md">ค้นหา</button>
+    </div>
+
+    <div id="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
   </div>
-
-  <div id="list" class="grid"></div>
+  
   <script src="app.js"></script>
 </body>
 </html>
